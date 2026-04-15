@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 730"
+  font-family="'PingFang SC','Microsoft YaHei','Segoe UI',Arial,sans-serif">
+
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- ── Stage 0 · 案件输入 ─────────────────────────────────────── -->
+  <rect x="30" y="10" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,10 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="33" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 0 · 案件输入</text>
+  <text x="280" y="70" text-anchor="middle" fill="#4B5563" font-size="12">文本 / PDF / Word 上传</text>
+  <text x="280" y="92" text-anchor="middle" fill="#4B5563" font-size="12">LLM 自动提取并生成结构化案件摘要</text>
+
+  <!-- Arrow 0 → 1 -->
+  <line x1="280" y1="116" x2="280" y2="136" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 1 · 主体识别 ─────────────────────────────────────── -->
+  <rect x="30" y="140" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,140 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="163" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 1 · 主体识别</text>
+  <text x="280" y="200" text-anchor="middle" fill="#4B5563" font-size="12">识别法庭主体（原告 / 被告 / 法官等）与社会影响方</text>
+  <text x="280" y="222" text-anchor="middle" fill="#4B5563" font-size="12">为每方生成独立人格、利益诉求与行动策略</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="280" y1="246" x2="280" y2="266" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 2 · 关系网络 ─────────────────────────────────────── -->
+  <rect x="30" y="270" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,270 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="293" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 2 · 关系网络</text>
+  <text x="280" y="330" text-anchor="middle" fill="#4B5563" font-size="12">抽取实体间关系类型与强度</text>
+  <text x="280" y="352" text-anchor="middle" fill="#4B5563" font-size="12">生成可交互的力导向关系图谱</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="280" y1="376" x2="280" y2="396" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 3 · 多 Agent 博弈 ────────────────────────────────── -->
+  <rect x="30" y="400" width="500" height="190" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,400 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="423" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 3 · 多 Agent 博弈（N 轮）</text>
+
+  <!-- Inner loop box -->
+  <rect x="60" y="442" width="440" height="122" rx="7" fill="white" stroke="#D1D5DB" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="280" y="461" text-anchor="middle" fill="#9CA3AF" font-size="10" font-style="italic">每 轮 循 环</text>
+  <text x="86" y="483" fill="#6B7280" font-size="12" font-weight="bold">①</text>
+  <text x="104" y="483" fill="#4B5563" font-size="12">选定活跃 Agent，切换审判阶段（开庭 → 举证 → 辩论 → 结辩）</text>
+  <text x="86" y="503" fill="#6B7280" font-size="12" font-weight="bold">②</text>
+  <text x="104" y="503" fill="#4B5563" font-size="12">各 Agent 并行推理，输出行动决策</text>
+  <text x="86" y="523" fill="#6B7280" font-size="12" font-weight="bold">③</text>
+  <text x="104" y="523" fill="#4B5563" font-size="12">解析行动，实时更新胜诉概率 &amp; 关系图权重</text>
+  <text x="86" y="543" fill="#6B7280" font-size="12" font-weight="bold">④</text>
+  <text x="104" y="543" fill="#4B5563" font-size="12">SSE 实时推送，前端时间轴同步滚动</text>
+
+  <!-- Arrow 3 → 4 -->
+  <line x1="280" y1="590" x2="280" y2="610" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 4 · 预测报告 ──────────────────────────────────────── -->
+  <rect x="30" y="614" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,614 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="637" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 4 · ReACT 预测报告</text>
+  <text x="280" y="674" text-anchor="middle" fill="#4B5563" font-size="12">Thought → Tool → Observation 多工具推理循环</text>
+  <text x="280" y="696" text-anchor="middle" fill="#4B5563" font-size="12">输出胜诉概率 / 争议焦点 / 判决说理 / 策略建议</text>
+
+</svg>

@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="LexSim Simulation Flow" id="lexsim-flow">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Stage 0 · 案件输入 -->
+        <mxCell id="s0-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="500" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="s0-header" value="Stage 0 · 案件输入" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6B7280;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;arcSize=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s0-text1" value="文本 / PDF / Word 上传" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="52" width="500" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s0-text2" value="LLM 自动提取并生成结构化案件摘要" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="76" width="500" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow 0→1 -->
+        <mxCell id="arr01" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9CA3AF;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="s0-bg" target="s1-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stage 1 · 主体识别 -->
+        <mxCell id="s1-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="140" width="500" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-header" value="Stage 1 · 主体识别" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6B7280;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;arcSize=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="140" width="500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-text1" value="识别法庭主体（原告 / 被告 / 法官等）与社会影响方" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="182" width="500" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-text2" value="为每方生成独立人格、利益诉求与行动策略" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="206" width="500" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow 1→2 -->
+        <mxCell id="arr12" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9CA3AF;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="s1-bg" target="s2-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stage 2 · 关系网络 -->
+        <mxCell id="s2-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="500" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-header" value="Stage 2 · 关系网络" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6B7280;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;arcSize=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-text1" value="抽取实体间关系类型与强度" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="312" width="500" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-text2" value="生成可交互的力导向关系图谱" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="336" width="500" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow 2→3 -->
+        <mxCell id="arr23" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9CA3AF;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="s2-bg" target="s3-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stage 3 · 多 Agent 博弈 -->
+        <mxCell id="s3-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="500" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-header" value="Stage 3 · 多 Agent 博弈（N 轮）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6B7280;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;arcSize=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="500" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Inner loop box -->
+        <mxCell id="s3-loop" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D1D5DB;strokeWidth=1.5;dashed=1;dashPattern=6 3;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="442" width="440" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-loop-label" value="每 轮 循 环" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontStyle=2;fontColor=#9CA3AF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="442" width="440" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-step1" value="① 选定活跃 Agent，切换审判阶段（开庭 → 举证 → 辩论 → 结辩）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="68" y="462" width="424" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-step2" value="② 各 Agent 并行推理，输出行动决策" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="68" y="484" width="424" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-step3" value="③ 解析行动，实时更新胜诉概率 &amp; 关系图权重" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="68" y="506" width="424" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-step4" value="④ SSE 实时推送，前端时间轴同步滚动" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="68" y="528" width="424" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow 3→4 -->
+        <mxCell id="arr34" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9CA3AF;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="s3-bg" target="s4-bg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stage 4 · ReACT 预测报告 -->
+        <mxCell id="s4-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="614" width="500" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-header" value="Stage 4 · ReACT 预测报告" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6B7280;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;arcSize=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="614" width="500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-text1" value="Thought → Tool → Observation 多工具推理循环" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="656" width="500" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-text2" value="输出胜诉概率 / 争议焦点 / 判决说理 / 策略建议" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="30" y="678" width="500" height="22" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
