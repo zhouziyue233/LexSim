@@ -10,6 +10,7 @@
 <p align="center">
   <a href="./README.md">中文</a> | <a href="./README-EN.md">English</a>
 </p>
+
 **LexSim** is a multi-agent simulation and prediction tool for legal cases. Unlike traditional "Q&A-style" legal AI, it instantiates the parties in a case — plaintiffs, defendants, judges, and broader social stakeholders (government agencies, legislators, media outlets, bloggers, etc.) — as individual LLM Agents, each with their own personality, stance, and behavioral strategy, making autonomous decisions across multiple rounds of adversarial play. Based on the dynamic interplay between these agents, the system computes real-time win probability for both sides, tracks social influence outside the courtroom, and generates a comprehensive prediction report covering case trajectory, likely verdict, judicial reasoning, litigation strategy, and societal impact assessment.
 
 <p align="center"><em>Input case background → Identify parties → Build relationship network → Multi-agent adversarial simulation → Generate comprehensive prediction report</em></p>
