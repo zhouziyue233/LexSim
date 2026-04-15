@@ -123,7 +123,6 @@ First time here? Click `Demo Project` on the home page to jump straight to a sam
 
 </div>
 
-
 ---
 
 ## Simulation Flow
@@ -135,6 +134,13 @@ First time here? Click `Demo Project` on the home page to jump straight to a sam
 ---
 
 *Disclaimer: LexSim is a research simulation tool. Its outputs do not constitute legal advice. LLM reasoning involves inherent uncertainty — please consult a qualified attorney for real legal matters.*
+
+---
+
+## Communication
+
+💌  719957352@qq.com
+
 
 ## 📈 Star History
 
