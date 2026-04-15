@@ -4,22 +4,26 @@
 <img src="./public/biglogo.svg" width="500"/>
 </div>
 
-<div align="center" style="font-style: italic">法律不过是对法院将要做什么的预测</div>
-<div align="center" style="font-style: italic"> — 霍姆斯大法官</div>
+<p align="center"><em>法律不过是对法院将要做什么的预测 — 霍姆斯大法官</em></p>
 
 <p align="center">
   <a href="./README.md">中文</a> | <a href="./README-EN.md">English</a>
 </p>
-**LexSim** 是一个面向法律场景的多智能体模拟与预测工具。不同于传统“问答式” legal AI，它把案件中的诉讼主体和社会影响方（政府、议员、媒体、博主等）实例化为 LLM Agent，拥有独立的人格、立场和行为策略，**在多轮博弈中自主决策**。它可以根据各主体动态的博弈过程，通过算法实时计算出原被告双方的胜诉概率，以及法庭外的社会影响指数，最终生成一份综合预测报告，预测案件走向、判决结果、裁判说理，并提供诉讼策略建议和社会影响评估。
+**LexSim** 是一个面向法律场景的多智能体模拟与预测工具。不同于传统“问答式” legal AI，它把案件中的诉讼主体和社会影响方（政府、议员、媒体、博主等）实例化为 LLM Agent，拥有独立的人格、立场和行为策略，在多轮博弈中自主决策。它可以根据各主体动态的博弈过程，通过算法实时计算出原被告双方的胜诉概率，以及法庭外的社会影响指数，最终生成一份综合预测报告，预测案件走向、判决结果、裁判说理，并提供诉讼策略建议和社会影响评估。
 
-> 输入案件背景 → 识别相关主体 → 构建关系网络 → 多 Agent 并行博弈模拟 → 生成综合预测报告
+<p align="center"><em>输入案件背景 → 识别相关主体 → 构建关系网络 → 多 Agent 并行博弈模拟 → 生成综合预测报告</em></p>
 
 ---
 
 ## 赞助商
 
-<img src="./public/lawmotion-ai.svg" width="300"/>
-<p align="center"><a href="https://lawmotion.ai/">律動智能</a></p>
+<p align="center">
+  <img src="./public/lawmotion-ai.svg" width="300" />
+</p>
+
+<p align="center">
+  <a href="https://lawmotion.ai/">律動智能</a>
+</p>
 
 ---
 
