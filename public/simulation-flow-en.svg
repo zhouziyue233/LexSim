@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 750"
+  font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- ── Stage 0 · Case Input ─────────────────────────────────────── -->
+  <rect x="30" y="10" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,10 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="33" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 0 · Case Input</text>
+  <text x="280" y="70" text-anchor="middle" fill="#4B5563" font-size="12">Upload text / PDF / Word document</text>
+  <text x="280" y="92" text-anchor="middle" fill="#4B5563" font-size="12">LLM automatically extracts and generates a structured case summary</text>
+
+  <!-- Arrow 0 → 1 -->
+  <line x1="280" y1="116" x2="280" y2="136" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 1 · Party Identification ───────────────────────────── -->
+  <rect x="30" y="140" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,140 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="163" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 1 · Party Identification</text>
+  <text x="280" y="200" text-anchor="middle" fill="#4B5563" font-size="12">Identify courtroom parties (plaintiff / defendant / judge) and social stakeholders</text>
+  <text x="280" y="222" text-anchor="middle" fill="#4B5563" font-size="12">Generate unique personality, interests, and strategy for each party</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="280" y1="246" x2="280" y2="266" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 2 · Relationship Network ───────────────────────────── -->
+  <rect x="30" y="270" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,270 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="293" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 2 · Relationship Network</text>
+  <text x="280" y="330" text-anchor="middle" fill="#4B5563" font-size="12">Extract relationship types and strength between all entities</text>
+  <text x="280" y="352" text-anchor="middle" fill="#4B5563" font-size="12">Render an interactive force-directed relationship graph</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="280" y1="376" x2="280" y2="396" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 3 · Multi-Agent Game (outer box +20px taller) ───────── -->
+  <rect x="30" y="400" width="500" height="210" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,400 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="423" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 3 · Multi-Agent Adversarial Play (N Rounds)</text>
+
+  <!-- Inner loop box — vertically centered in outer content area (436–610=174px, box h=156, pad=9px each) -->
+  <rect x="60" y="445" width="440" height="156" rx="7" fill="white" stroke="#D1D5DB" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="280" y="463" text-anchor="middle" fill="#9CA3AF" font-size="10" font-style="italic">Per Round</text>
+
+  <!-- ① split into two lines -->
+  <text x="86" y="481" fill="#6B7280" font-size="12" font-weight="bold">①</text>
+  <text x="104" y="481" fill="#4B5563" font-size="12">Select active agents, advance trial phase:</text>
+  <text x="104" y="497" fill="#4B5563" font-size="12">Opening → Evidence → Debate → Closing</text>
+
+  <text x="86" y="516" fill="#6B7280" font-size="12" font-weight="bold">②</text>
+  <text x="104" y="516" fill="#4B5563" font-size="12">Each agent reasons in parallel and outputs its action decision</text>
+
+  <!-- ③ split into two lines -->
+  <text x="86" y="535" fill="#6B7280" font-size="12" font-weight="bold">③</text>
+  <text x="104" y="535" fill="#4B5563" font-size="12">Parse actions, update win probability</text>
+  <text x="104" y="551" fill="#4B5563" font-size="12">&amp; relationship graph weights in real time</text>
+
+  <text x="86" y="570" fill="#6B7280" font-size="12" font-weight="bold">④</text>
+  <text x="104" y="570" fill="#4B5563" font-size="12">Push events via SSE; frontend timeline scrolls in sync</text>
+
+  <!-- Arrow 3 → 4 -->
+  <line x1="280" y1="610" x2="280" y2="630" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Stage 4 · Prediction Report (shifted down +20px) ──────────── -->
+  <rect x="30" y="634" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <path d="M40,634 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
+  <text x="280" y="657" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 4 · Prediction Report</text>
+  <text x="280" y="695" text-anchor="middle" fill="#4B5563" font-size="12">Outputs win probability / key disputes</text>
+  <text x="280" y="715" text-anchor="middle" fill="#4B5563" font-size="12">judicial reasoning / strategy advice</text>
+
+</svg>

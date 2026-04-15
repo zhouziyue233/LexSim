@@ -60,8 +60,7 @@
   <!-- ── Stage 4 · 预测报告 ──────────────────────────────────────── -->
   <rect x="30" y="614" width="500" height="106" rx="10" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5"/>
   <path d="M40,614 h480 q10,0 10,10 v26 h-500 v-26 q0,-10 10,-10 z" fill="#6B7280"/>
-  <text x="280" y="637" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 4 · ReACT 预测报告</text>
-  <text x="280" y="674" text-anchor="middle" fill="#4B5563" font-size="12">Thought → Tool → Observation 多工具推理循环</text>
-  <text x="280" y="696" text-anchor="middle" fill="#4B5563" font-size="12">输出胜诉概率 / 争议焦点 / 判决说理 / 策略建议</text>
+  <text x="280" y="637" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Stage 4 · 预测报告</text>
+  <text x="280" y="685" text-anchor="middle" fill="#4B5563" font-size="12">输出胜诉概率 / 争议焦点 / 判决说理 / 策略建议</text>
 
 </svg>
