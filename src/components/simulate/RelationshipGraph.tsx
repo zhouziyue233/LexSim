@@ -75,7 +75,7 @@ interface Props {
   onToggleCollapse?: () => void
 }
 
-export default function RelationshipGraphPanel({ graph, expanded, collapsed, onToggleExpand, onToggleCollapse }: Props) {
+export default function RelationshipGraphPanel({ graph, expanded, onToggleExpand, onToggleCollapse }: Props) {
   const T = useT()
   const roleLabel = (role: EntityRole) => T(`role.${role}` as TranslationKey)
   const svgRef = useRef<SVGSVGElement>(null)
