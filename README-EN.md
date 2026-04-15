@@ -47,6 +47,10 @@ The theoretical foundation draws from **Legal Realism** and the sociological con
 
 ## Quick Start
 
+### ⚡️ **[Online Demo](https://lawmotionai.com/)**
+
+### 💻 **Local Deployment**
+
 ### Step 1: Install Node.js (skip if already installed)
 
 Open a terminal (search "Terminal" on Mac, "PowerShell" on Windows) and run the command for your system:
