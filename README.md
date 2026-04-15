@@ -120,6 +120,7 @@ npm run dev
 
 <img src="./public/4.png" width="800">
 
+</div>
 
 ---
 
