@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "composite": true,
+    "paths": {
+      "@shared/*": ["../shared/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "../shared" }]
+}
