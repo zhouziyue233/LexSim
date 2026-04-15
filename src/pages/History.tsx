@@ -118,13 +118,6 @@ export default function History() {
     loadDetails(selectedId).catch(err => setError(String(err)))
   }, [loadDetails, selectedId])
 
-  const reloadAll = useCallback(async () => {
-    setError(null)
-    const next = await refreshList()
-    if (selectedId) { await loadDetails(selectedId); return }
-    if (next[0]?.id) await loadDetails(next[0].id)
-  }, [loadDetails, refreshList, selectedId])
-
   const handleDelete = async (simulationId: string) => {
     setBusyAction(`delete:${simulationId}`)
     setError(null)
