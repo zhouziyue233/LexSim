@@ -109,6 +109,18 @@ npm run dev
 
 首次使用，建议先在首页点击 `示范项目`，即可跳转到示范案例页面，先行感受预测引擎的完整输出。
 
+**运行截图：**
+
+<div align="center">
+<img src="./public/1.png" width="800">
+
+<img src="./public/2.png" width="800">
+
+<img src="./public/3.png" width="800">
+
+<img src="./public/4.png" width="800">
+
+
 ---
 
 ## 模拟流程

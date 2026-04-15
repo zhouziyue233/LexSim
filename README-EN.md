@@ -110,6 +110,19 @@ Open **http://localhost:5173** in your browser to get started.
 
 First time here? Click `Demo Project` on the home page to jump straight to a sample case and experience the full output of the prediction engine.
 
+**Screenshots:**
+
+<div align="center">
+<img src="./public/1.png" width="800">
+
+<img src="./public/2.png" width="800">
+
+<img src="./public/3.png" width="800">
+
+<img src="./public/4.png" width="800">
+
+
+
 ---
 
 ## Simulation Flow
