@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Local AI tooling
+.claude/
+
+# Environment secrets (API keys, etc.)
+.env
+.env.local
+.env.*.local
+server/.env
+server/.env.local
+
+# Build outputs
+dist/
+shared/dist/
+server/dist/
+*.tsbuildinfo
+
+# Database — track legalsim.db (demo data) but ignore runtime sidecars
+server/data/*.db-shm
+server/data/*.db-wal
+server/data/*.bak*
+server/data/*.recover.sql
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
