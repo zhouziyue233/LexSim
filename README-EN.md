@@ -121,6 +121,7 @@ First time here? Click `Demo Project` on the home page to jump straight to a sam
 
 <img src="./public/4.png" width="800">
 
+</div>
 
 
 ---
