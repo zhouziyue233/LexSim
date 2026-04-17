@@ -16,18 +16,6 @@
 
 ---
 
-## 赞助商
-
-<p align="center">
-  <img src="./public/lawmotion-ai.svg" width="300" />
-</p>
-
-<p align="center">
-  <a href="https://lawmotion.ai/">律動智能</a>
-</p>
-
----
-
 ## 核心特性
 
 项目灵感借鉴了 [MiroFish](https://github.com/666ghj/MiroFish)，在此基础上针对法律场景进行了深度重构，强化了工作流的专业性与推理深度。
