@@ -38,7 +38,7 @@ export const LLM_PROVIDERS: LLMProvider[] = [
   {
     id: 'claude',
     label: 'Claude',
-    apiBase: 'https://api.anthropic.com/v1',
+    apiBase: 'https://api.anthropic.com/v1/',
     models: [
       { label: 'Claude Sonnet 4', value: 'claude-sonnet-4-20250514' },
       { label: 'Claude Haiku 3.5', value: 'claude-3-5-haiku-20241022' },
@@ -48,7 +48,7 @@ export const LLM_PROVIDERS: LLMProvider[] = [
   {
     id: 'gemini',
     label: 'Gemini',
-    apiBase: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    apiBase: 'https://generativelanguage.googleapis.com/v1beta/openai/',
     models: [
       { label: 'Gemini 2.5 Flash', value: 'gemini-2.5-flash-preview-04-17' },
       { label: 'Gemini 2.5 Pro', value: 'gemini-2.5-pro-preview-03-25' },
@@ -87,7 +87,7 @@ export const LLM_PROVIDERS: LLMProvider[] = [
   {
     id: 'glm',
     label: 'GLM',
-    apiBase: 'https://open.bigmodel.cn/api/paas/v4',
+    apiBase: 'https://open.bigmodel.cn/api/paas/v4/',
     models: [
       { label: 'GLM-4 Plus', value: 'glm-4-plus' },
       { label: 'GLM-4 Air', value: 'glm-4-air' },
@@ -108,7 +108,7 @@ export const LLM_PROVIDERS: LLMProvider[] = [
   {
     id: 'minimax',
     label: 'MiniMax',
-    apiBase: 'https://api.minimax.io/v1',
+    apiBase: 'https://api.minimaxi.com/v1',
     models: [
       { label: 'abab6.5s', value: 'abab6.5s-chat' },
       { label: 'abab6.5', value: 'abab6.5-chat' },
