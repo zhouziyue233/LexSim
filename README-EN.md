@@ -17,18 +17,6 @@
 
 ---
 
-## Sponsor
-
-<p align="center">
-  <img src="./public/lawmotion-ai.svg" width="300" />
-</p>
-
-<p align="center">
-  <a href="https://lawmotion.ai/">LawMotion AI</a>
-</p>
-
----
-
 ## Key Features
 
 Inspired by [MiroFish](https://github.com/666ghj/MiroFish), LexSim has been deeply re-engineered for legal scenarios with a stronger focus on workflow rigor and depth of reasoning.
