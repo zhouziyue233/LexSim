@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   ArrowRight, Users, BarChart3, Globe,
-  Sparkles, Network, FileText, Brain,
+  Sparkles, Network, FileText, Brain, ChevronRight,
 } from 'lucide-react'
 import { listSimulations } from '../lib/api'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -20,6 +20,8 @@ const DEMO_SIM_IDS: Record<string, string> = {
 const FEATURE_META = [
   {
     icon: <Users size={17} style={{ color: '#1E4A82' }} />,
+    accent: '#1E4A82',
+    accentRgb: '30,74,130',
     color: 'rgba(30,74,130,0.07)',
     borderColor: 'rgba(30,74,130,0.22)',
     titleKey: 'feature.0.title',
@@ -27,6 +29,8 @@ const FEATURE_META = [
   },
   {
     icon: <Globe size={17} style={{ color: '#BE185D' }} />,
+    accent: '#BE185D',
+    accentRgb: '190,24,93',
     color: 'rgba(190,24,93,0.06)',
     borderColor: 'rgba(190,24,93,0.18)',
     titleKey: 'feature.1.title',
@@ -34,6 +38,8 @@ const FEATURE_META = [
   },
   {
     icon: <Brain size={17} style={{ color: '#0369A1' }} />,
+    accent: '#0369A1',
+    accentRgb: '3,105,161',
     color: 'rgba(3,105,161,0.07)',
     borderColor: 'rgba(3,105,161,0.2)',
     titleKey: 'feature.2.title',
@@ -41,6 +47,8 @@ const FEATURE_META = [
   },
   {
     icon: <BarChart3 size={17} style={{ color: '#047857' }} />,
+    accent: '#047857',
+    accentRgb: '4,120,87',
     color: 'rgba(4,120,87,0.06)',
     borderColor: 'rgba(4,120,87,0.18)',
     titleKey: 'feature.3.title',
@@ -50,11 +58,11 @@ const FEATURE_META = [
 
 // ─── Workflow step icons ──────────────────────────────────────────────────────
 const WORKFLOW_ICONS = [
-  <FileText size={14} />,
-  <Users size={14} />,
-  <Network size={14} />,
-  <Brain size={14} />,
-  <BarChart3 size={14} />,
+  <FileText size={18} strokeWidth={1.75} />,
+  <Users size={18} strokeWidth={1.75} />,
+  <Network size={18} strokeWidth={1.75} />,
+  <Brain size={18} strokeWidth={1.75} />,
+  <BarChart3 size={18} strokeWidth={1.75} />,
 ]
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
@@ -224,35 +232,47 @@ export default function Home() {
           {FEATURE_META.map((f, i) => (
             <div
               key={i}
-              className="reveal rounded-xl p-5 transition-all duration-200 cursor-default"
+              className="feat-card reveal rounded-xl p-5 transition-all duration-300 cursor-default"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #D5E0EF',
-                boxShadow: '0 1px 4px rgba(15,30,53,0.04)',
+                boxShadow: '0 1px 2px rgba(15,30,53,0.04), 0 8px 24px rgba(15,30,53,0.04)',
                 '--reveal-delay': `${i * 0.1}s`,
+                '--accent': f.accent,
               } as React.CSSProperties}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLDivElement
                 el.style.borderColor = f.borderColor
-                el.style.background = f.color
-                el.style.boxShadow = '0 4px 20px rgba(15,30,53,0.1)'
-                el.style.transform = 'translateY(-3px)'
+                el.style.boxShadow = `0 2px 4px rgba(15,30,53,0.04), 0 14px 36px rgba(${f.accentRgb},0.18)`
+                el.style.transform = 'translateY(-6px) scale(1.015)'
+                const title = el.querySelector('h3') as HTMLElement | null
+                if (title) title.style.color = f.accent
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLDivElement
                 el.style.borderColor = '#D5E0EF'
-                el.style.background = '#FFFFFF'
-                el.style.boxShadow = '0 1px 4px rgba(15,30,53,0.04)'
-                el.style.transform = 'translateY(0)'
+                el.style.boxShadow = '0 1px 2px rgba(15,30,53,0.04), 0 8px 24px rgba(15,30,53,0.04)'
+                el.style.transform = 'translateY(0) scale(1)'
+                const title = el.querySelector('h3') as HTMLElement | null
+                if (title) title.style.color = '#0F1E35'
               }}
             >
               <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center mb-3"
-                style={{ background: f.color, border: `1px solid ${f.borderColor}` }}
+                className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                style={{
+                  background: `linear-gradient(135deg, rgba(${f.accentRgb},0.13), rgba(${f.accentRgb},0.04))`,
+                  border: `1px solid ${f.borderColor}`,
+                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.6), 0 2px 6px rgba(${f.accentRgb},0.10)`,
+                }}
               >
                 {f.icon}
               </div>
-              <h3 className="font-semibold text-sm mb-2" style={{ color: '#0F1E35' }}>{T(f.titleKey)}</h3>
+              <h3
+                className="font-semibold text-sm mb-2 transition-colors duration-200"
+                style={{ color: '#0F1E35' }}
+              >
+                {T(f.titleKey)}
+              </h3>
               <p className="text-xs leading-relaxed" style={{ color: '#6B8AAD' }}>{T(f.descKey)}</p>
             </div>
           ))}
@@ -265,16 +285,30 @@ export default function Home() {
       {/* ── Workflow ─────────────────────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
         <div
-          className="reveal rounded-xl p-8"
+          className="reveal rounded-xl p-8 relative overflow-hidden"
           style={{
-            background: '#FFFFFF',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FAFCFF 100%)',
             border: '1px solid #D5E0EF',
-            boxShadow: '0 1px 4px rgba(15,30,53,0.04)',
+            boxShadow: '0 1px 2px rgba(15,30,53,0.04), 0 12px 36px rgba(15,30,53,0.05)',
             '--reveal-delay': '0.05s',
           } as React.CSSProperties}
         >
+          {/* Watermark icon, bottom-right */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute"
+            style={{
+              right: -30,
+              bottom: -30,
+              opacity: 0.05,
+              color: '#1E4A82',
+            }}
+          >
+            <Brain size={220} />
+          </div>
+
           {/* Step nodes row */}
-          <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-0 mb-0">
+          <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-0 mb-0 relative">
             {WORKFLOW.map((s, i) => {
               const isActive = activeStep === i
               return (
@@ -286,22 +320,46 @@ export default function Home() {
                     onMouseEnter={() => setActiveStep(i)}
                     onMouseLeave={() => setActiveStep(null)}
                   >
-                    {/* Node */}
+                    {/* Node wrapper (for ring + halo) */}
                     <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200"
-                      style={{
-                        background: isActive
-                          ? 'linear-gradient(135deg, #1E4A82, #2563EB)'
-                          : 'linear-gradient(135deg, rgba(30,74,130,0.1), rgba(30,74,130,0.03))',
-                        border: isActive
-                          ? '2px solid #1E4A82'
-                          : '1px solid rgba(30,74,130,0.22)',
-                        color: isActive ? '#fff' : '#1E4A82',
-                        transform: isActive ? 'scale(1.12)' : 'scale(1)',
-                        boxShadow: isActive ? '0 4px 16px rgba(30,74,130,0.25)' : 'none',
-                      }}
+                      className={`relative ${isActive ? 'node-ring-active' : ''}`}
+                      style={{ width: 48, height: 48 }}
                     >
-                      {s.icon}
+                      {/* Ground halo */}
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute"
+                        style={{
+                          left: '50%',
+                          bottom: -8,
+                          transform: 'translateX(-50%)',
+                          width: 60,
+                          height: 14,
+                          background: 'radial-gradient(ellipse at center, rgba(30,74,130,0.18), transparent 70%)',
+                          opacity: isActive ? 1 : 0.5,
+                          transition: 'opacity 0.2s ease',
+                          filter: 'blur(2px)',
+                        }}
+                      />
+                      {/* Node */}
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 relative"
+                        style={{
+                          background: isActive
+                            ? 'linear-gradient(135deg, #1E4A82, #2563EB)'
+                            : 'linear-gradient(135deg, rgba(30,74,130,0.12), rgba(30,74,130,0.03))',
+                          border: isActive
+                            ? '2px solid #1E4A82'
+                            : '1px solid rgba(30,74,130,0.22)',
+                          color: isActive ? '#fff' : '#1E4A82',
+                          transform: isActive ? 'scale(1.12)' : 'scale(1)',
+                          boxShadow: isActive
+                            ? '0 6px 20px rgba(30,74,130,0.32), inset 0 1px 0 rgba(255,255,255,0.25)'
+                            : 'inset 0 1px 0 rgba(255,255,255,0.6)',
+                        }}
+                      >
+                        {s.icon}
+                      </div>
                     </div>
                     <span
                       className="label-micro"
@@ -309,6 +367,7 @@ export default function Home() {
                         color: isActive ? '#1E4A82' : '#6B8AAD',
                         fontSize: '9px',
                         transition: 'color 0.2s',
+                        marginTop: 2,
                       }}
                     >
                       STEP {s.step}
@@ -321,27 +380,35 @@ export default function Home() {
                     </p>
                   </button>
 
-                  {/* Connector with flowing light (desktop only) */}
+                  {/* Connector — refined dot trail + chevron arrow (desktop only) */}
                   {i < WORKFLOW.length - 1 && (
                     <div
                       className="hidden sm:flex items-center flex-1"
-                      style={{ paddingTop: 23, maxWidth: 80 }}
+                      style={{ paddingTop: 27, maxWidth: 90 }}
                     >
                       <div style={{
                         flex: 1,
-                        height: 1.5,
-                        background: 'repeating-linear-gradient(to right, #C0D0E6, #C0D0E6 5px, transparent 5px, transparent 9px)',
-                        borderRadius: 1,
+                        height: 6,
+                        backgroundImage:
+                          'radial-gradient(circle, #B6C7DC 1.6px, transparent 1.8px)',
+                        backgroundSize: '9px 6px',
+                        backgroundRepeat: 'repeat-x',
+                        backgroundPosition: 'left center',
+                        WebkitMaskImage:
+                          'linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%)',
+                        maskImage:
+                          'linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%)',
                       }} />
-                      {/* Arrowhead */}
-                      <div style={{
-                        width: 0,
-                        height: 0,
-                        borderTop: '4px solid transparent',
-                        borderBottom: '4px solid transparent',
-                        borderLeft: '7px solid #A8C4E0',
-                        flexShrink: 0,
-                      }} />
+                      {/* Chevron arrow */}
+                      <ChevronRight
+                        size={16}
+                        strokeWidth={2.25}
+                        style={{
+                          color: '#94AECD',
+                          flexShrink: 0,
+                          marginLeft: -2,
+                        }}
+                      />
                     </div>
                   )}
                 </Fragment>
@@ -352,8 +419,8 @@ export default function Home() {
           {/* Expandable description */}
           <div
             style={{
-              marginTop: activeStep !== null ? 20 : 0,
-              maxHeight: activeStep !== null ? 80 : 0,
+              marginTop: activeStep !== null ? 24 : 0,
+              maxHeight: activeStep !== null ? 90 : 0,
               overflow: 'hidden',
               transition: 'max-height 0.3s ease, margin-top 0.3s ease, opacity 0.25s ease',
               opacity: activeStep !== null ? 1 : 0,
@@ -363,20 +430,22 @@ export default function Home() {
               <div
                 className="rounded-lg px-5 py-3.5 flex items-start gap-3"
                 style={{
-                  background: 'rgba(30,74,130,0.04)',
-                  border: '1px solid rgba(30,74,130,0.12)',
+                  background: 'linear-gradient(135deg, rgba(30,74,130,0.06), rgba(37,99,235,0.03))',
+                  border: '1px solid rgba(30,74,130,0.14)',
+                  borderLeft: '3px solid #2563EB',
                 }}
               >
                 <div
-                  className="rounded-full flex items-center justify-center mt-0.5 shrink-0"
+                  className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 mt-0.5 shrink-0"
                   style={{
-                    width: 22, height: 22,
-                    background: 'rgba(30,74,130,0.1)',
+                    background: 'rgba(30,74,130,0.10)',
+                    border: '1px solid rgba(30,74,130,0.18)',
                     color: '#1E4A82',
                   }}
                 >
-                  <span className="label-micro" style={{ fontSize: '8px' }}>
-                    {WORKFLOW[activeStep].step}
+                  <Sparkles size={10} />
+                  <span className="label-micro" style={{ fontSize: '9px' }}>
+                    STEP {WORKFLOW[activeStep].step}
                   </span>
                 </div>
                 <p className="text-sm" style={{ color: '#374D6B', lineHeight: 1.6 }}>

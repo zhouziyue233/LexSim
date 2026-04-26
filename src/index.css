@@ -328,3 +328,34 @@
 .delay-300 { animation-delay: 0.3s; opacity: 0; }
 .delay-400 { animation-delay: 0.4s; opacity: 0; }
 .delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+/* ── Feature card with top accent bar ─────────────────────────────── */
+.feat-card { position: relative; overflow: hidden; }
+.feat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent, #2563EB), transparent);
+  opacity: 0.45;
+  transition: opacity 0.25s ease, height 0.25s ease;
+  pointer-events: none;
+}
+.feat-card:hover::before {
+  opacity: 1;
+  height: 3px;
+}
+
+/* ── STEP node rotating ring (hover only) ─────────────────────────── */
+@keyframes spinRing { to { transform: rotate(360deg); } }
+.node-ring-active::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0deg, #2563EB 90deg, transparent 220deg);
+  -webkit-mask: radial-gradient(circle, transparent 23px, #000 24px);
+          mask: radial-gradient(circle, transparent 23px, #000 24px);
+  animation: spinRing 4s linear infinite;
+  pointer-events: none;
+}
