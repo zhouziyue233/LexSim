@@ -32,10 +32,9 @@ The theoretical foundation draws from **Legal Realism** and the sociological con
 - **Watch the simulation unfold in real time**: As the simulation runs, each agent's moves, arguments, and decisions scroll by like a live feed — so you can follow exactly how the situation evolves, step by step.
 
 ---
-
 ## Quick Start
 
-### ⚡️ **[Online Demo](https://lawmotionai.com/)**
+### ⚡️ **[Online Demo](https://lexsim-online-demo.vercel.app/)**
 
 ### 💻 **Local Deployment**
 
