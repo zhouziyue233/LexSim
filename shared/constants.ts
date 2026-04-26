@@ -19,121 +19,20 @@ export interface LLMProvider {
   id: string
   label: string
   apiBase: string
-  models: { label: string; value: string }[]
 }
 
 export const LLM_PROVIDERS: LLMProvider[] = [
-  {
-    id: 'chatgpt',
-    label: 'ChatGPT',
-    apiBase: 'https://api.openai.com/v1',
-    models: [
-      { label: 'GPT-4o', value: 'gpt-4o' },
-      { label: 'GPT-4o Mini', value: 'gpt-4o-mini' },
-      { label: 'GPT-4.1', value: 'gpt-4.1' },
-      { label: 'GPT-4.1 Mini', value: 'gpt-4.1-mini' },
-      { label: 'o3 Mini', value: 'o3-mini' },
-    ],
-  },
-  {
-    id: 'claude',
-    label: 'Claude',
-    apiBase: 'https://api.anthropic.com/v1/',
-    models: [
-      { label: 'Claude Sonnet 4', value: 'claude-sonnet-4-20250514' },
-      { label: 'Claude Haiku 3.5', value: 'claude-3-5-haiku-20241022' },
-      { label: 'Claude Opus 4', value: 'claude-opus-4-20250514' },
-    ],
-  },
-  {
-    id: 'gemini',
-    label: 'Gemini',
-    apiBase: 'https://generativelanguage.googleapis.com/v1beta/openai/',
-    models: [
-      { label: 'Gemini 2.5 Flash', value: 'gemini-2.5-flash-preview-04-17' },
-      { label: 'Gemini 2.5 Pro', value: 'gemini-2.5-pro-preview-03-25' },
-      { label: 'Gemini 2.0 Flash', value: 'gemini-2.0-flash' },
-    ],
-  },
-  {
-    id: 'grok',
-    label: 'Grok',
-    apiBase: 'https://api.x.ai/v1',
-    models: [
-      { label: 'Grok 3', value: 'grok-3' },
-      { label: 'Grok 3 Mini', value: 'grok-3-mini' },
-    ],
-  },
-  {
-    id: 'deepseek',
-    label: 'DeepSeek',
-    apiBase: 'https://api.deepseek.com/v1',
-    models: [
-      { label: 'DeepSeek Chat (V3)', value: 'deepseek-chat' },
-      { label: 'DeepSeek Reasoner (R1)', value: 'deepseek-reasoner' },
-    ],
-  },
-  {
-    id: 'qwen',
-    label: 'Qwen',
-    apiBase: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-    models: [
-      { label: 'Qwen Plus', value: 'qwen-plus' },
-      { label: 'Qwen Max', value: 'qwen-max' },
-      { label: 'Qwen Turbo', value: 'qwen-turbo' },
-      { label: 'Qwen Long', value: 'qwen-long' },
-    ],
-  },
-  {
-    id: 'glm',
-    label: 'GLM',
-    apiBase: 'https://open.bigmodel.cn/api/paas/v4/',
-    models: [
-      { label: 'GLM-4 Plus', value: 'glm-4-plus' },
-      { label: 'GLM-4 Air', value: 'glm-4-air' },
-      { label: 'GLM-4 Flash', value: 'glm-4-flash' },
-      { label: 'GLM-4 Long', value: 'glm-4-long' },
-    ],
-  },
-  {
-    id: 'kimi',
-    label: 'Kimi',
-    apiBase: 'https://api.moonshot.cn/v1',
-    models: [
-      { label: 'Moonshot v1 8K', value: 'moonshot-v1-8k' },
-      { label: 'Moonshot v1 32K', value: 'moonshot-v1-32k' },
-      { label: 'Moonshot v1 128K', value: 'moonshot-v1-128k' },
-    ],
-  },
-  {
-    id: 'minimax',
-    label: 'MiniMax',
-    apiBase: 'https://api.minimaxi.com/v1',
-    models: [
-      { label: 'abab6.5s', value: 'abab6.5s-chat' },
-      { label: 'abab6.5', value: 'abab6.5-chat' },
-      { label: 'abab5.5', value: 'abab5.5-chat' },
-    ],
-  },
-  {
-    id: 'openrouter',
-    label: 'OpenRouter',
-    apiBase: 'https://openrouter.ai/api/v1',
-    models: [
-      { label: 'Auto（自动路由）', value: 'openrouter/auto' },
-      { label: 'Claude Sonnet 4', value: 'anthropic/claude-sonnet-4' },
-      { label: 'GPT-4o', value: 'openai/gpt-4o' },
-      { label: 'DeepSeek Chat', value: 'deepseek/deepseek-chat' },
-      { label: 'Llama 3.3 70B', value: 'meta-llama/llama-3.3-70b-instruct' },
-    ],
-  },
+  { id: 'chatgpt',    label: 'ChatGPT',    apiBase: 'https://openai.com' },
+  { id: 'claude',     label: 'Claude',     apiBase: 'https://api.anthropic.com' },
+  { id: 'gemini',     label: 'Gemini',     apiBase: 'https://generativelanguage.googleapis.com' },
+  { id: 'grok',       label: 'Grok',       apiBase: 'https://api.x.ai/v1' },
+  { id: 'deepseek',   label: 'DeepSeek',   apiBase: 'https://api.deepseek.com' },
+  { id: 'qwen',       label: 'Qwen',       apiBase: 'https://dashscope.aliyuncs.com/compatible-mode/v1' },
+  { id: 'glm',        label: 'GLM',        apiBase: 'https://open.bigmodel.cn/api/paas/v4/' },
+  { id: 'kimi',       label: 'Kimi',       apiBase: 'https://api.moonshot.cn' },
+  { id: 'minimax',    label: 'MiniMax',    apiBase: 'https://api.minimaxi.com' },
+  { id: 'openrouter', label: 'OpenRouter', apiBase: 'https://openrouter.ai/api/v1/chat/completions' },
 ]
-
-/** @deprecated Use LLM_PROVIDERS instead */
-export const LLM_PRESETS: { label: string; apiBase: string; model: string }[] =
-  LLM_PROVIDERS.flatMap(p =>
-    p.models.map(m => ({ label: `${p.label} ${m.label}`, apiBase: p.apiBase, model: m.value })),
-  )
 
 export const DEFAULT_LLM_CONFIG: LLMConfig = {
   apiKey: '',
