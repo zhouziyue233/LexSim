@@ -208,7 +208,7 @@ function AgentDetailModal({ entity, onClose }: { entity: LegalEntity; onClose: (
           <section>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
               <Brain size={13} style={{ color: '#1E4A82' }} />
-              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#A8BDD8', textTransform: 'uppercase' }}>{T('entity.modal.persona')}</span>
+              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#000', textTransform: 'uppercase' }}>{T('entity.modal.persona')}</span>
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.8, color: '#374D6B' }}>
               {entity.agentPersona}
@@ -219,7 +219,7 @@ function AgentDetailModal({ entity, onClose }: { entity: LegalEntity; onClose: (
           <section>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
               <Scale size={13} style={{ color: '#1E4A82' }} />
-              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#A8BDD8', textTransform: 'uppercase' }}>{T('entity.modal.position')}</span>
+              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#000', textTransform: 'uppercase' }}>{T('entity.modal.position')}</span>
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.8, color: '#374D6B' }}>
               {entity.position}
@@ -231,7 +231,7 @@ function AgentDetailModal({ entity, onClose }: { entity: LegalEntity; onClose: (
             <section>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
                 <Target size={13} style={{ color: '#1E4A82' }} />
-                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#A8BDD8', textTransform: 'uppercase' }}>{T('entity.modal.interests')}</span>
+                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#000', textTransform: 'uppercase' }}>{T('entity.modal.interests')}</span>
               </div>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {entity.interests.map((interest, i) => (
@@ -254,7 +254,7 @@ function AgentDetailModal({ entity, onClose }: { entity: LegalEntity; onClose: (
           <section>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
               <Swords size={13} style={{ color: '#1E4A82' }} />
-              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#A8BDD8', textTransform: 'uppercase' }}>{T('entity.modal.strategy')}</span>
+              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#000', textTransform: 'uppercase' }}>{T('entity.modal.strategy')}</span>
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.8, color: '#374D6B' }}>
               {entity.strategy}
@@ -266,7 +266,7 @@ function AgentDetailModal({ entity, onClose }: { entity: LegalEntity; onClose: (
             <section>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
                 <TrendingUp size={13} style={{ color: '#1E4A82' }} />
-                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#A8BDD8', textTransform: 'uppercase' }}>{T('entity.modal.influence')}</span>
+                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: '#000', textTransform: 'uppercase' }}>{T('entity.modal.influence')}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ flex: 1, height: 6, background: '#EDF2F9', borderRadius: 3, overflow: 'hidden' }}>
