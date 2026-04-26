@@ -1,5 +1,4 @@
-import type { EntityRole, ProceedingType, TrialPhase } from '@shared/types'
-import { ROLE_ALLOWED_ACTIONS } from '@shared/constants'
+import type { EntityRole, TrialPhase } from '@shared/types'
 
 const PHASE_LABELS_ZH: Record<TrialPhase, string> = {
   OPENING: '开庭陈述',
@@ -135,27 +134,3 @@ export function getPhaseGuidance(phase: TrialPhase, role: EntityRole, lang: 'zh'
   return socialGuidance[phase]
 }
 
-/**
- * 按阶段缩窄角色可选行动。
- */
-export function getPhaseAllowedActions(phase: TrialPhase, role: EntityRole): ProceedingType[] {
-  const base = ROLE_ALLOWED_ACTIONS[role] ?? []
-
-  // 社会方和证人不受阶段限制
-  if (!['PLAINTIFF', 'DEFENDANT', 'PLAINTIFF_LAWYER', 'DEFENDANT_LAWYER', 'JUDGE'].includes(role)) {
-    return base
-  }
-
-  const phaseRestrictions: Record<TrialPhase, Set<ProceedingType>> = {
-    OPENING: new Set(['CROSS_EXAMINATION', 'SETTLEMENT_OFFER'] as ProceedingType[]),
-    EVIDENCE: new Set<ProceedingType>(), // 全部允许
-    DEBATE: new Set(['EVIDENCE_SUBMISSION'] as ProceedingType[]),
-    CLOSING: new Set(['SETTLEMENT_OFFER'] as ProceedingType[]),
-  }
-
-  const restricted = phaseRestrictions[phase]
-  const filtered = base.filter(a => !restricted.has(a))
-
-  // 确保至少保留一个可选行动
-  return filtered.length > 0 ? filtered : base
-}

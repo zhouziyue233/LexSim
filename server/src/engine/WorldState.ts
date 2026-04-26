@@ -7,8 +7,6 @@ import type {
   JudgeDirective,
   BurdenOfProofState,
 } from '@shared/types'
-import type { EdgeChange } from './relationship-updater.js'
-
 export class WorldState {
   round = 0
   currentPlaintiffWinProb = 50
@@ -32,10 +30,6 @@ export class WorldState {
 
   getRecentEvents(lastN = 10): GameplayEvent[] {
     return this.events.slice(-lastN)
-  }
-
-  getEventsForRound(round: number): GameplayEvent[] {
-    return this.events.filter(e => e.round === round)
   }
 
   getEntityRelationships(entityId: string): RelationEdge[] {
@@ -77,12 +71,6 @@ export class WorldState {
 
   addDirective(d: JudgeDirective) {
     this.activeDirectives.push(d)
-  }
-
-  getDirectivesFor(agentId: string): JudgeDirective[] {
-    return this.activeDirectives.filter(
-      d => !d.targetAgentId || d.targetAgentId === agentId,
-    )
   }
 
   pruneExpiredDirectives(currentRound: number) {
@@ -146,14 +134,6 @@ export class WorldState {
     if (standardMet) text += '（已基本完成举证）'
     if (lastShiftRound) text += `；第${lastShiftRound}轮发生责任转移：${reason ?? ''}`
     return text
-  }
-
-  // ─── Edge Change Management ───────────────────────────────────────────
-
-  applyEdgeChanges(changes: EdgeChange[]) {
-    // The relationship-updater already mutates the edges array directly,
-    // so this method serves as an integration point for any additional logic.
-    // Edge additions, updates, and removals are handled in updateRelationships().
   }
 
   // ─── Situation Awareness ─────────────────────────────────────────────

@@ -53,7 +53,7 @@ const W_RELEVANCE = 0.25   // 25% — LLM 判断的案件相关度
  * @param llmRawInfluence LLM 原始输出的 caseInfluence (0-100)，作为案件相关性因子
  * @returns 最终 caseInfluence (5-100)
  */
-export function computeCaseInfluence(
+function computeCaseInfluence(
   role: EntityRole,
   followerScale?: FollowerScale,
   llmRawInfluence?: number,

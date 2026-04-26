@@ -161,7 +161,6 @@ export class GameMaster {
       this.worldState.entities,
       round,
     )
-    this.worldState.applyEdgeChanges(edgeChanges)
     if (edgeChanges.length > 0) {
       this.emitter.emit('graph:update', { round, changes: edgeChanges })
     }

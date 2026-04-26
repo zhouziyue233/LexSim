@@ -1,6 +1,5 @@
 import type { LegalEntity, LLMConfig } from '@shared/types'
 import { ROLE_ALLOWED_ACTIONS, IN_COURT_TYPES, getRelevantStatutes, EVIDENCE_CATEGORY_LABELS } from '@shared/constants'
-import { getPhaseAllowedActions } from './trial-phase.js'
 import { Agent } from './Agent.js'
 import type { WorldState } from './WorldState.js'
 
